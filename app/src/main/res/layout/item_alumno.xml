@@ -1,0 +1,36 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- Si es necesario, puedes agregar variables para Data Binding aquí -->
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Nombre del alumno -->
+        <TextView
+            android:id="@+id/tvNombreAlumno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nombre del Alumno"
+            android:textSize="16sp"
+            tools:text="Juan Pérez" />
+
+        <!-- Puntos del alumno -->
+        <TextView
+            android:id="@+id/tvPuntos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Puntos: 0"
+            android:textSize="14sp"
+            tools:text="Puntos: 100" />
+
+    </LinearLayout>
+</layout>

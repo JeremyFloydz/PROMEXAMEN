@@ -1,0 +1,40 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- Si necesitas declarar variables para Data Binding, puedes hacerlo aquí -->
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.ProfesorActivity">
+
+        <Button
+            android:id="@+id/btnCrearAlumno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear Alumno" />
+
+        <Button
+            android:id="@+id/btnCrearGrupo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear Grupo" />
+
+        <Button
+            android:id="@+id/btnAsignarAlumno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asignar Alumno" />
+
+        <Button
+            android:id="@+id/btnConsultarPuntos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consultar Puntos" />
+
+    </LinearLayout>
+</layout>
