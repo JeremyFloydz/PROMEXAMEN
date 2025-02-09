@@ -22,6 +22,7 @@ class JuegoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Configura el elemento arrastrable
         binding.draggableItem.setOnLongClickListener {
             val clipData = android.content.ClipData.newPlainText("", "")
             val shadow = View.DragShadowBuilder(it)
@@ -29,10 +30,20 @@ class JuegoFragment : Fragment() {
             true
         }
 
-        binding.dropTarget.setOnDragListener { v, event ->
+        // Configura el área de soltado
+        binding.dropTarget.setOnDragListener { _, event ->
             when (event.action) {
                 DragEvent.ACTION_DROP -> {
-                    Toast.makeText(requireContext(), "Elemento soltado correctamente", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "¡Elemento soltado correctamente!", Toast.LENGTH_SHORT).show()
+                    binding.draggableItem.visibility = View.GONE // Ocultar elemento después de soltar
+                    true
+                }
+                DragEvent.ACTION_DRAG_ENTERED -> {
+                    binding.dropTarget.setBackgroundResource(android.R.color.holo_red_light)
+                    true
+                }
+                DragEvent.ACTION_DRAG_EXITED -> {
+                    binding.dropTarget.setBackgroundResource(android.R.color.holo_green_light)
                     true
                 }
                 else -> false

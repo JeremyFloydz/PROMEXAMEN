@@ -1,9 +1,10 @@
 package com.example.promexamen.activities
 
-
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.promexamen.R
 import com.example.promexamen.databinding.ActivityAlumnoBinding
+import com.example.promexamen.fragments.JuegoFragment
 
 class AlumnoActivity : AppCompatActivity() {
 
@@ -15,15 +16,10 @@ class AlumnoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnJugar.setOnClickListener {
-            // Navegar al fragmento del juego
-        }
-
-        binding.btnRellenarHuecos.setOnClickListener {
-            // Navegar al fragmento de rellenar huecos
-        }
-
-        binding.btnConsultarPuntos.setOnClickListener {
-            // Navegar al fragmento de consulta de puntos
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, JuegoFragment()) // Reemplaza el contenedor con JuegoFragment
+                .addToBackStack(null) // Permite volver atrás
+                .commit()
         }
     }
 }
